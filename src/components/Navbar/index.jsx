@@ -23,13 +23,13 @@ export default function Navbar() {
                     src={logo} 
                     alt="LOGOMARCA"
                     animate={{ x: -15, opacity: 1 }}
-                    transition={{ ease: 'easeOut', duration: 1 }}
+                    transition={{ ease: 'easeOut', duration: 0.5 }}
                 />
             </Left>
             <Right>
                 <ButtonSimple
                     animate={{ x: 15, opacity: 1 }}
-                    transition={{ ease: 'easeOut', duration: 1 }}>
+                    transition={{ ease: 'linear', duration: 0.2 }}>
                         CONTATO
                 </ButtonSimple>
             </Right>
