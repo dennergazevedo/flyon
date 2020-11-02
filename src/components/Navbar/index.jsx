@@ -28,6 +28,7 @@ export default function Navbar() {
             </Left>
             <Right>
                 <ButtonSimple
+                    href="/#contact"
                     animate={{ x: 15, opacity: 1 }}
                     transition={{ ease: 'linear', duration: 0.2 }}>
                         CONTATO

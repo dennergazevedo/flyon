@@ -43,6 +43,10 @@ export const ModalBody = styled(motion.div)`
     font-size: 14px;
     padding-bottom: 50px;
 
+    @media only screen and (max-width: 500px){
+        font-size: 12px;
+    }
+
     span{
         color: #121212;
         margin-top: 20px;

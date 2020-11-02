@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // 121212
 // 0084AD
 
-export const ButtonSimple = styled(motion.button)`
+export const ButtonSimple = styled(motion.a)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +18,7 @@ export const ButtonSimple = styled(motion.button)`
     border-radius: 5px;
     transition: 0.3s all;
     opacity: 0;
+    text-decoration: none;
 
     &:hover{
         transition: 0.3s all;

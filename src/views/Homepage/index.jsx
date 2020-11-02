@@ -66,13 +66,59 @@ import {
     FaBullhorn,
     FaDollarSign,
     FaHeadset,
+    FaShoppingCart,
+    FaProjectDiagram
 } from 'react-icons/fa';
 
 export default function Homepage() {
 
     const [productModal, setProductModal] = useState(false);
+    const [salesModal, setSalesModal] = useState(false);
+    const [systemModal, setSystemModal] = useState(false);
+    const [subject, setSubject] = useState('');
 
     const toggleProduct = () => setProductModal(!productModal);
+    const toggleSales = () => setSalesModal(!salesModal);
+    const toggleSystem = () => setSystemModal(!systemModal);
+
+    function handleConsultProduct(){
+        setProductModal(false);
+        setSalesModal(false);
+        setSystemModal(false);
+        setSubject('Gostaria de saber mais sobre STATIC');
+        window.location.href='/#contact';
+    }
+
+    function handleConsultSales(){
+        setProductModal(false);
+        setSalesModal(false);
+        setSystemModal(false);
+        setSubject('Gostaria de saber mais sobre E-COMMERCE');
+        window.location.href='/#contact';
+    }
+
+    function handleConsultSystem(){
+        setProductModal(false);
+        setSalesModal(false);
+        setSystemModal(false);
+        setSubject('Gostaria de saber mais sobre APPLICATION');
+        window.location.href='/#contact';
+    }
+
+    function handleOpenProduct(){
+        setSalesModal(false);
+        toggleProduct();
+    }
+
+    function handleOpenSales(){
+        setProductModal(false);
+        toggleSales();
+    }
+
+    function handleOpenSystem(){
+        setSystemModal(false);
+        toggleSystem();
+    }
 
     return (
         <Container>
@@ -186,7 +232,7 @@ export default function Homepage() {
                         <span className="bodyDescribe">
                             Deixe que os clientes encontre sua loja online nos mais famosos mecanismos de buscas (Google, Yahoo, Bing e etc).
                         </span>
-                        <ButtonMore onClick={toggleProduct}>SAIBA MAIS...</ButtonMore>
+                        <ButtonMore onClick={handleOpenProduct}>SAIBA MAIS...</ButtonMore>
                     </Product>
                             
                     <Modal isToggled={productModal} toggle={toggleProduct}>
@@ -207,7 +253,7 @@ export default function Homepage() {
                                     Um <b>site estático</b> é recomendado para quem busca:
                                     <li style={{marginTop:'20px'}}>Divulgar sua marca;</li>
                                     <li>Divulgar meios de contato;</li>
-                                    <li>Ser encontrado nos mecanismos de busca (Google, Yahoo, Bing e etc);</li>
+                                    <li>Ser encontrado nos mecanismos de buscas; <i>(Google, Yahoo, Bing e etc)</i></li>
                                     <li>Publicar o seu trabalho.</li>
                                 </ul>
 
@@ -220,7 +266,7 @@ export default function Homepage() {
                                     <li>Manutenção. <i>(Depende do responsável)</i></li>
                                 </ul>
 
-                                <ButtonSend style={{marginTop:'50px'}}>
+                                <ButtonSend style={{marginTop:'50px'}} onClick={handleConsultProduct}>
                                     <FaHeadset className="iconButton"/>
                                     FALAR COM CONSULTOR
                                 </ButtonSend>
@@ -245,8 +291,50 @@ export default function Homepage() {
                             <span className="bodyDescribe">
                                 Site com SSL, plataformas de pagamento, criptografia e constrído com tecnologia de ponta.
                             </span>
-                            <ButtonMore>SAIBA MAIS...</ButtonMore>
+                            <ButtonMore onClick={handleOpenSales}>SAIBA MAIS...</ButtonMore>
                         </Product>
+
+                        <Modal isToggled={salesModal} toggle={toggleSales}>
+                            <ModalContainer>
+                                <ButtonCloseModal onClick={toggleSales}>
+                                    <FaTimes/>
+                                </ButtonCloseModal>
+                                <TitleModal>
+                                    <FaShoppingCart className="iconTitle"/>
+                                    <span>E-COMMERCE</span>
+                                </TitleModal>
+                                <ModalBody>
+                                    <span>
+                                        Loja virtual, loja online, comércio eletrônico ou e-commerce nada mais é que um site onde permite vender pela internet produtos ou 
+                                        serviços.
+                                    </span>
+                                    <ul>
+                                        Uma <b>Loja virtual</b> é recomendado para quem busca:
+                                        <li style={{marginTop:'20px'}}>Divulgar sua marca;</li>
+                                        <li>Converter vendas;</li>
+                                        <li>Clientes;</li>
+                                        <li>Divulgar meios de contato;</li>
+                                        <li>Ser encontrado nos mecanismos de buscas; <i>(Google, Yahoo, Bing e etc)</i></li>
+                                        <li>Publicar o seu trabalho.</li>
+                                    </ul>
+
+                                    <ul>
+                                        <span>
+                                            <FaDollarSign className="iconUl"/> Encargos para manter-se online:
+                                        </span>
+                                        <li style={{marginTop:'20px'}}>Domínio (suamarca.com.br); <i>(Aprox. R$40,00/ano)</i></li>
+                                        <li>Hospedagem; <i>(Grátis por tempo indeterminado)</i></li>
+                                        <li>Servidor; <i>(Terceirização à partir de R$49,90/mês)</i></li>
+                                        <li>Manutenção. <i>(Depende do responsável)</i></li>
+                                    </ul>
+
+                                    <ButtonSend style={{marginTop:'50px'}} onClick={handleConsultSales}>
+                                        <FaHeadset className="iconButton"/>
+                                        FALAR COM CONSULTOR
+                                    </ButtonSend>
+                                </ModalBody>
+                            </ModalContainer>
+                    </Modal>
 
                         <Product
                             animate={{ x: 20, opacity: 1 }}
@@ -265,12 +353,54 @@ export default function Homepage() {
                             <span className="bodyDescribe">
                                 Controle seu estoque, suas vendas e seus gastos de forma muito mais prática.
                             </span>
-                            <ButtonMore>SAIBA MAIS...</ButtonMore>
+                            <ButtonMore onClick={handleOpenSystem}>SAIBA MAIS...</ButtonMore>
                         </Product>
+
+                        <Modal isToggled={systemModal} toggle={toggleSystem}>
+                            <ModalContainer>
+                                <ButtonCloseModal onClick={toggleSystem}>
+                                    <FaTimes/>
+                                </ButtonCloseModal>
+                                <TitleModal>
+                                    <FaProjectDiagram className="iconTitle"/>
+                                    <span>APPLICATION</span>
+                                </TitleModal>
+                                <ModalBody>
+                                    <span>
+                                        Aplicação feita sob medida para o seu negócio, mude seu conceito sobre controle financeiro;
+                                    </span>
+                                    <ul>
+                                        Uma <b>Aplicação</b> é recomendado para quem busca:
+                                        <li style={{marginTop:'20px'}}>Criar algo próprio;</li>
+                                        <li>Controle de Vendas;</li>
+                                        <li>Controle Financeiro;</li>
+                                        <li>Controle Interno;</li>
+                                        <li>Emissão de cupons não fiscais;</li>
+                                        <li>Relatórios detalhados;</li>
+                                        <li>Histórico completo.</li>
+                                    </ul>
+
+                                    <ul>
+                                        <span>
+                                            <FaDollarSign className="iconUl"/> Encargos para manter-se online:
+                                        </span>
+                                        <li style={{marginTop:'20px'}}>Domínio (suamarca.com.br); <i>(Aprox. R$40,00/ano)</i></li>
+                                        <li>Hospedagem; <i>(Grátis por tempo indeterminado)</i></li>
+                                        <li>Servidor; <i>(Terceirização à partir de R$149,90/mês)</i></li>
+                                        <li>Manutenção. <i>(Depende do responsável)</i></li>
+                                    </ul>
+
+                                    <ButtonSend style={{marginTop:'50px'}} onClick={handleConsultSystem}>
+                                        <FaHeadset className="iconButton"/>
+                                        FALAR COM CONSULTOR
+                                    </ButtonSend>
+                                </ModalBody>
+                            </ModalContainer>
+                    </Modal>
                     </ListItem>
                 </Store>
 
-                <Contact>
+                <Contact id="contact">
                     <Left 
                         animate={{ x: -10, opacity: 1 }}
                         transition={{ ease: 'easeOut', duration: 1 }}>
@@ -318,7 +448,7 @@ export default function Homepage() {
                         <div className="rightItem">
                             <div className="divInputForm">
                                 <button><FaComments/></button>
-                                <input placeholder="Assunto"/>
+                                <input placeholder="Assunto" value={subject} onChange={e => setSubject(e.target.value)}/>
                             </div>
 
                             <div className="divInputForm">
