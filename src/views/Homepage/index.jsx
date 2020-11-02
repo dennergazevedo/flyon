@@ -138,23 +138,7 @@ export default function Homepage() {
     }
 
     async function handleMail(){
-        const sgMail = require('@sendgrid/mail')
-        sgMail.setApiKey('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')
-        const msg = {
-        to: 'dennergazevedo@gmail.com', // Change to your recipient
-        from: 'dennergazevedo@gmail.com', // Change to your verified sender
-        subject: 'Sending with SendGrid is Fun',
-        text: 'and easy to do anywhere, even with Node.js',
-        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-        }
-        sgMail
-        .send(msg)
-        .then(() => {
-            console.log('Email sent')
-        })
-        .catch((error) => {
-            console.error(error)
-        })
+        console.log('Email sent')
     }
 
     return (
