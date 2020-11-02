@@ -101,7 +101,6 @@ export const Responsive = styled(motion.div)`
     border-radius: 5px;
     background-color: #333;
     margin-top: -50px;
-    margin-bottom: 50px;
     font-size: 12px;
     font-weight: 500;
     transition: 0.5s all;
@@ -114,7 +113,7 @@ export const Responsive = styled(motion.div)`
     }
     
     @media only screen and (max-width: 600px){
-        margin-top: 0;
+        margin-top: -20;
     }
 `;
 
@@ -151,4 +150,51 @@ export const ItemResponsive = styled(motion.div)`
         font-size: 12px;
         margin-left: 10px;
     }
+`;
+
+export const Clients = styled(motion.div)`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: 50px;
+`;
+
+export const ItemClients = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 50px;
+    width: 40%;
+    min-width: 300px;
+    margin: 20px;
+
+    img{
+        height: auto;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 50px;
+
+        @media only screen and (max-width: 600px){
+            font-size: 40px;
+        }
+    }
+
+    span{
+        margin-top: 20px;
+    }
+`;
+
+export const Line = styled(motion.div)`
+    display: flex;
+    background-color: #13A5DE;
+    height: 5px;
+    width: 50px;
+    margin-bottom: 20px;
 `;

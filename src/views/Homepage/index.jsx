@@ -10,7 +10,10 @@ import {
     Website,
     Responsive,
     Icon,
-    ItemResponsive
+    ItemResponsive,
+    Clients,
+    ItemClients,
+    Line
 } from './styles.js';
 
 // BUTTON
@@ -24,6 +27,7 @@ import Footer from '../../components/Footer';
 
 // ASSETS
 import website from '../../assets/img/website.png';
+import clients from '../../assets/img/clients.png';
 
 // ICONS
 import {
@@ -76,6 +80,18 @@ export default function Homepage() {
                         </span>
                     </ItemResponsive>
                 </Responsive>
+
+                <Clients>
+                    <ItemClients>
+                        <Line/>
+                        <h1>Conquiste novos clientes e seja reconhecido.</h1>
+                        <span>Uma nova jornada próspera com o suporte que precisa.</span>
+                    </ItemClients>
+
+                    <ItemClients>
+                        <img src={clients} alt="CLIENTES" />
+                    </ItemClients>
+                </Clients>
             </Body>
             <Footer />
         </Container>
