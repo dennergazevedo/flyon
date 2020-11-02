@@ -76,6 +76,12 @@ export default function Homepage() {
     const [salesModal, setSalesModal] = useState(false);
     const [systemModal, setSystemModal] = useState(false);
     const [subject, setSubject] = useState('');
+    const [product, setProduct] = useState('');
+    const [email, setEmail] = useState('');
+    const [nome, setNome] = useState('');
+    const [phone, setPhone] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [mensagem, setMensagem] = useState('');
 
     const toggleProduct = () => setProductModal(!productModal);
     const toggleSales = () => setSalesModal(!salesModal);
@@ -85,7 +91,8 @@ export default function Homepage() {
         setProductModal(false);
         setSalesModal(false);
         setSystemModal(false);
-        setSubject('Gostaria de saber mais sobre STATIC');
+        setProduct('STATIC');
+        setSubject('Desejo saber mais...')
         window.location.href='/#contact';
     }
 
@@ -93,7 +100,8 @@ export default function Homepage() {
         setProductModal(false);
         setSalesModal(false);
         setSystemModal(false);
-        setSubject('Gostaria de saber mais sobre E-COMMERCE');
+        setProduct('E-COMMERCE');
+        setSubject('Desejo saber mais...');
         window.location.href='/#contact';
     }
 
@@ -101,7 +109,8 @@ export default function Homepage() {
         setProductModal(false);
         setSalesModal(false);
         setSystemModal(false);
-        setSubject('Gostaria de saber mais sobre APPLICATION');
+        setProduct('APPLICATION');
+        setSubject('Desejo saber mais...')
         window.location.href='/#contact';
     }
 
@@ -430,19 +439,19 @@ export default function Homepage() {
                         <div className="rightItem">
                             <div className="divInputForm">
                                 <button><FaEnvelope/></button>
-                                <input placeholder="email@exemplo.com"/>
+                                <input placeholder="email@exemplo.com" value={email} onChange={e => setEmail(e.target.value)}/>
                             </div>
 
                             <div className="divInputForm">
                                 <button><FaUser/></button>
-                                <input placeholder="Nome Completo"/>
+                                <input placeholder="Nome Completo" value={nome} onChange={e => setNome(e.target.value)}/>
                             </div>
                         </div>
 
                         <div className="rightItem">
                             <div className="divInputForm">
                                 <button><FaGem/></button>
-                                <input placeholder="Produto"/>
+                                <input placeholder="Produto" value={product} onChange={e => setProduct(e.target.value)}/>
                             </div>
 
                             <div className="divInputForm">
@@ -450,6 +459,8 @@ export default function Homepage() {
                                 <InputMask
                                     mask="(99)9 9999-9999"
                                     placeholder="(99)9 9999-9999"
+                                    value={phone} 
+                                    onChange={e => setPhone(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -462,11 +473,11 @@ export default function Homepage() {
 
                             <div className="divInputForm">
                                 <button><FaMapMarkerAlt/></button>
-                                <input placeholder="Cidade de atuação"/>
+                                <input placeholder="Cidade de atuação" value={cidade} onChange={e => setCidade(e.target.value)}/>
                             </div>
                         </div>
 
-                        <textarea placeholder="Escreva uma mensagem..."/>
+                        <textarea placeholder="Escreva uma mensagem..." value={mensagem} onChange={e => setMensagem(e.target.value)}/>
                         <ButtonSend>ENVIAR</ButtonSend>
                     </Right>
                 </Contact>
