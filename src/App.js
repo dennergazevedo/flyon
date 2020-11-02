@@ -16,7 +16,7 @@ import GlobalStyles from '../src/styles/global';
 
 function corsMktPago() {
   let headers = new Headers();
-  headers.append('Access-Control-Allow-Origin', 'https://api.mailjet.com/v3.1/send');
+  headers.append('Access-Control-Allow-Origin', 'https://inputonbackend.herokuapp.com');
   headers.append('GET', 'POST');
 }
 

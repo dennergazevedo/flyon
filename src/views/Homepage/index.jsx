@@ -70,6 +70,11 @@ import {
     FaProjectDiagram
 } from 'react-icons/fa';
 
+// SERVICES
+import api from '../../services/api';
+import { toast } from 'react-toastify';
+import validator from 'validator';
+
 export default function Homepage() {
 
     const [productModal, setProductModal] = useState(false);
@@ -138,7 +143,24 @@ export default function Homepage() {
     }
 
     async function handleMail(){
-        console.log('Email sent')
+        if(validator.isEmail(email)){
+            try{
+                await api.post('/contact',{
+                    email,
+                    nome,
+                    produto: product,
+                    phone,
+                    assunto: subject,
+                    cidade,
+                    mensagem,
+                });
+                toast.success('Sucesso! Em breve nossa equipe entrará em contato.', { position: 'bottom-center' });
+            }catch(err){
+                toast.error('Falha na tentativa de contato, verifique os dados e tente novamente!', { position: 'bottom-center' });
+            }
+        }else{
+            toast.error('Digite um e-mail válido!', { position: 'bottom-center' });
+        }
     }
 
     return (
