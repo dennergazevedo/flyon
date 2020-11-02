@@ -70,3 +70,41 @@ export const ButtonJoin = styled(motion.button)`
         background-color: #0084AD;
     }
 `;
+
+export const ButtonMore = styled(motion.button)`
+    display: flex;
+    background-color: transparent;
+    color: #222;
+    position: absolute;
+    font-size: 10px;
+    margin-top: 435px;
+    font-weight: 500;
+    transition: 0.5s all;
+
+    &:hover{
+        transition: 0.5s all;
+        color: #FFF;
+        font-weight: 400;
+    }
+`;
+
+export const ButtonSend = styled(motion.button)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #13A5DE;
+    color: #FFF;
+    border-radius: 5px;
+    transition: 0.3s all;
+    margin-top: 20px;
+    align-self: center;
+
+    &:hover{
+        transition: 0.3s all;
+        background-color: #0084AD;
+    }
+`;

@@ -8,16 +8,22 @@ export const Footer = styled(motion.footer)`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     max-width: 100vw;
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 300px;
     padding: 50px;
     background-color: #000;
     color: #FFF;
     padding-left: 20%;
     padding-right: 20%;
+
+    @media only screen and (max-width: 800px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const Left = styled(motion.div)`
@@ -38,4 +44,8 @@ export const Logomarca  = styled(motion.img)`
     display: flex;
     width: auto;
     height: 100px;
+
+    @media only screen and (max-width: 800px){
+        height: 60px;
+    }
 `;

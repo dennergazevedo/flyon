@@ -14,17 +14,31 @@ import {
     ItemResponsive,
     Clients,
     ItemClients,
-    Line
+    Line,
+    Store,
+    ItemStore,
+    ListItem,
+    Product,
+    Divider,
+    Contact,
+    Left,
+    Right,
+    TitleContact,
+    SubtitleContact
 } from './styles.js';
 
 // BUTTON
 import {
-    ButtonJoin
+    ButtonJoin,
+    ButtonMore,
+    ButtonSend
 } from '../../components/Buttons/styles.js';
+
 
 // COMPONENTS
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import InputMask from 'react-input-mask';
 
 // ASSETS
 import website from '../../assets/img/website.png';
@@ -33,7 +47,13 @@ import clients from '../../assets/img/clients.png';
 // ICONS
 import {
     FaCompressAlt,
-    FaTags
+    FaTags,
+    FaComments,
+    FaEnvelope,
+    FaUser,
+    FaGem,
+    FaPhoneAlt,
+    FaMapMarkerAlt
 } from 'react-icons/fa';
 
 export default function Homepage() {
@@ -120,6 +140,139 @@ export default function Homepage() {
                         <img src={clients} alt="CLIENTES" />
                     </ItemClients>
                 </Clients>
+
+                <Store>
+                    <ItemStore 
+                        animate={{ x: 20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 1 }}>
+                        <Line/>
+                        <h1>Conheça nossos produtos</h1>
+                        <span>Escolha a opção que melhor descreve sua necessidade.</span>
+                    </ItemStore>
+                    <ListItem>
+                        <Product 
+                            animate={{ x: 20, opacity: 1 }}
+                            transition={{ ease: 'easeOut', duration: 0.8 }}>
+                            <div className="title">
+                                <button>STATIC</button>
+                                <span>01</span>
+                            </div>
+                            <Divider/>
+                            <span className="bodyTitle">
+                                Site Estático
+                            </span>
+                            <span className="bodySubtitle">
+                                Informe aos seus clientes
+                            </span>
+                            <span className="bodyDescribe">
+                                Site informativo, construído em tecnologia de ponta, para melhor experiência de seus clientes.
+                            </span>
+                            <ButtonMore>SAIBA MAIS...</ButtonMore>
+                        </Product>
+
+                        <Product 
+                            animate={{ x: 20, opacity: 1 }}
+                            transition={{ ease: 'easeOut', duration: 1.6 }}>
+                            <div className="title">
+                                <button>E-COMMERCE</button>
+                                <span>02</span>
+                            </div>
+                            <Divider/>
+                            <span className="bodyTitle">
+                                Venda Online
+                            </span>
+                            <span className="bodySubtitle">
+                                Venda e receba 100% online
+                            </span>
+                            <span className="bodyDescribe">
+                                Site com SSL, plataformas de pagamento, criptografia e constrído com tecnologia de ponta.
+                            </span>
+                            <ButtonMore>SAIBA MAIS...</ButtonMore>
+                        </Product>
+
+                        <Product
+                            animate={{ x: 20, opacity: 1 }}
+                            transition={{ ease: 'easeOut', duration: 2.4 }}>
+                            <div className="title">
+                                <button>APPLICATION</button>
+                                <span>03</span>
+                            </div>
+                            <Divider/>
+                            <span className="bodyTitle">
+                                Controle
+                            </span>
+                            <span className="bodySubtitle">
+                                Sistema de controle completo.
+                            </span>
+                            <span className="bodyDescribe">
+                                Controle seu estoque, suas vendas e seus gastos de forma muito mais prática.
+                            </span>
+                            <ButtonMore>SAIBA MAIS...</ButtonMore>
+                        </Product>
+                    </ListItem>
+                </Store>
+
+                <Contact>
+                    <Left 
+                        animate={{ x: -10, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 1 }}>
+                        <TitleContact>
+                            <FaComments className="iconContact"/>
+                            <span>FALE CONOSCO<b>.</b></span>
+                        </TitleContact>
+                        <SubtitleContact>
+                            Envie uma mensagem para nosso antedimento virtual, estamos ansiosos para saber todas suas ideias e como está disposto
+                            à colocar ela na prática! 
+                            <i>*Dentro de até 1 dia útil nossa equipe entrará em contato.</i>
+                            <b>Seja digital você também.</b>
+                        </SubtitleContact>
+                    </Left>
+                    <Right 
+                        animate={{ x: 10, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 1 }}>
+                        <div className="rightItem">
+                            <div className="divInputForm">
+                                <button><FaEnvelope/></button>
+                                <input placeholder="email@exemplo.com"/>
+                            </div>
+
+                            <div className="divInputForm">
+                                <button><FaUser/></button>
+                                <input placeholder="Nome Completo"/>
+                            </div>
+                        </div>
+
+                        <div className="rightItem">
+                            <div className="divInputForm">
+                                <button><FaGem/></button>
+                                <input placeholder="Produto"/>
+                            </div>
+
+                            <div className="divInputForm">
+                                <button><FaPhoneAlt/></button>
+                                <InputMask
+                                    mask="(99)9 9999-9999"
+                                    placeholder="(99)9 9999-9999"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="rightItem">
+                            <div className="divInputForm">
+                                <button><FaComments/></button>
+                                <input placeholder="Assunto"/>
+                            </div>
+
+                            <div className="divInputForm">
+                                <button><FaMapMarkerAlt/></button>
+                                <input placeholder="Cidade de atuação"/>
+                            </div>
+                        </div>
+
+                        <textarea placeholder="Escreva uma mensagem..."/>
+                        <ButtonSend>ENVIAR</ButtonSend>
+                    </Right>
+                </Contact>
             </Body>
             <Footer />
         </Container>
