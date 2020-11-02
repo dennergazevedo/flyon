@@ -13,7 +13,7 @@ import {
 } from '../Buttons/styles.js';
 
 // ASSETS
-import logo from '../../assets/img/logo-azul.png';
+import logo from '../../assets/img/logonav.png';
 
 export default function Navbar() {
     return (

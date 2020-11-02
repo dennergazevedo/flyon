@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 
 // STYLED COMPONENTS
@@ -31,7 +32,8 @@ import clients from '../../assets/img/clients.png';
 
 // ICONS
 import {
-    FaCompressAlt
+    FaCompressAlt,
+    FaTags
 } from 'react-icons/fa';
 
 export default function Homepage() {
@@ -56,7 +58,7 @@ export default function Homepage() {
                         </span>
                     </Citacao>
                     <ButtonJoin
-                        animate={{ x: 10, opacity: 1 }}
+                        animate={{ opacity: 1 }}
                         transition={{ ease: 'easeOut', duration: 0.8 }}>
                             ENTRAR NOS NEGÓCIOS
                     </ButtonJoin>
@@ -67,28 +69,54 @@ export default function Homepage() {
                     alt="WEBSITE" 
                     animate={{ y: -50, opacity: 1 }}
                     transition={{ ease: 'easeOut', duration: 1 }}/>
-                <Responsive>
-                    <Icon>
-                        <FaCompressAlt />
-                    </Icon>
-                    <ItemResponsive>
-                        <span>
-                            <b>100% RESPONSIVO</b>
-                        </span>
-                        <span>
-                            Ajusta em qualquer aparelho.
-                        </span>
-                    </ItemResponsive>
-                </Responsive>
+                    
+                <div className="divWebsite">
+                    <Responsive 
+                        animate={{ y: 20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 0.5 }}>
+                        <Icon>
+                            <FaTags />
+                        </Icon>
+                        <ItemResponsive>
+                            <span>
+                                <b>VENDA ONLINE</b>
+                            </span>
+                            <span>
+                                Receba online, rápido e seguro.
+                            </span>
+                        </ItemResponsive>
+                    </Responsive>
+
+                    <Responsive
+                        id="responsive"
+                        animate={{ y: 20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 0.5 }}>
+                        <Icon>
+                            <FaCompressAlt />
+                        </Icon>
+                        <ItemResponsive>
+                            <span>
+                                <b>100% RESPONSIVO</b>
+                            </span>
+                            <span>
+                                Ajusta em qualquer aparelho.
+                            </span>
+                        </ItemResponsive>
+                    </Responsive>
+                </div>
 
                 <Clients>
-                    <ItemClients>
+                    <ItemClients 
+                        animate={{ x: -20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 1 }}>
                         <Line/>
                         <h1>Conquiste novos clientes e seja reconhecido.</h1>
                         <span>Uma nova jornada próspera com o suporte que precisa.</span>
                     </ItemClients>
 
-                    <ItemClients>
+                    <ItemClients
+                        animate={{ x: 20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 1 }}>
                         <img src={clients} alt="CLIENTES" />
                     </ItemClients>
                 </Clients>

@@ -17,12 +17,28 @@ export const Body = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60vw;
+    width: 70vw;
     height: auto;
     margin-top: 50px;
     justify-content: flex-start;
 
-    @media only screen and (max-width: 600px){
+    .divWebsite{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 1000px){
+            flex-direction: column;
+        }
+
+        #responsive{
+            @media only screen and (max-width: 1000px){
+                margin-top: 10px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 850px){
         width: 90vw;
     }
 `;
@@ -37,7 +53,12 @@ export const Title = styled(motion.span)`
     font-weight: 600;
     opacity: 0.1;
 
-    @media only screen and (max-width: 600px){
+    @media only screen and (max-width: 1170px){
+        width: 90%;
+        
+    }
+
+    @media only screen and (max-width: 720px){
         font-size: 50px;
     }
 
@@ -56,6 +77,16 @@ export const Subtitle = styled(motion.div)`
     width: 60%;
     height: auto;
     padding: 5px;
+    z-index: 1;
+
+    @media only screen and (max-width: 1560px){
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 1170px){
+        width: 80%;
+        flex-direction: column;
+    }
 
     @media only screen and (max-width: 600px){
         width: 100%;
@@ -73,6 +104,10 @@ export const Citacao = styled(motion.span)`
     line-height: 24px;
     min-width: 300px;
 
+    @media only screen and (max-width: 1170px){
+        text-align: center;
+    }
+
     @media only screen and (max-width: 600px){
         margin-bottom: 30px;
     }
@@ -84,6 +119,7 @@ export const Website = styled(motion.img)`
     align-items: center;
     width: 100%;
     height: 100%;
+    z-index: 0;
 
     @media only screen and (max-width: 600px){
         margin-top: 50px;
@@ -100,21 +136,14 @@ export const Responsive = styled(motion.div)`
     height: 80px;
     border-radius: 5px;
     background-color: #333;
-    margin-top: -50px;
+    margin-top: -70px;
     font-size: 12px;
     font-weight: 500;
     transition: 0.5s all;
     cursor: pointer;
-
-    &:hover{
-        padding-left: 30px;
-        padding-right: 30px;
-        transition: 0.5s all;
-    }
-    
-    @media only screen and (max-width: 600px){
-        margin-top: -20;
-    }
+    opacity: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 `;
 
 export const Icon = styled(motion.div)`

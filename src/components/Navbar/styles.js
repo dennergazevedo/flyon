@@ -23,7 +23,12 @@ export const Logomarca = styled(motion.img)`
     display: flex;
     width: auto;
     opacity: 0;
-    height: 50px;
+    height: 40px;
+
+    @media only screen and (max-width: 1200px){
+        width: 30vw;
+        height: auto;
+    }
 `;
 
 export const Left = styled(motion.div)`

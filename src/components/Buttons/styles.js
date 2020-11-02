@@ -59,6 +59,11 @@ export const ButtonJoin = styled(motion.button)`
     border-radius: 5px;
     transition: 0.3s all;
     color: #FFF;
+    opacity: 0;
+
+    @media only screen and (max-width: 1170px){
+        margin-top: 20px;
+    }
 
     &:hover{
         transition: 0.3s all;
