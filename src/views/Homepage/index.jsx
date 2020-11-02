@@ -29,7 +29,8 @@ import {
 
 import {
     ModalContainer,
-    TitleModal
+    TitleModal,
+    ModalBody
 } from './Modal/styles.js';
 
 // BUTTON
@@ -62,7 +63,9 @@ import {
     FaPhoneAlt,
     FaMapMarkerAlt,
     FaTimes,
-    FaBullhorn
+    FaBullhorn,
+    FaDollarSign,
+    FaHeadset,
 } from 'react-icons/fa';
 
 export default function Homepage() {
@@ -178,10 +181,10 @@ export default function Homepage() {
                             Site Estático
                         </span>
                         <span className="bodySubtitle">
-                            Informe aos seus clientes
+                            Seja encontrado por clientes.
                         </span>
                         <span className="bodyDescribe">
-                            Site informativo, construído em tecnologia de ponta, para melhor experiência de seus clientes.
+                            Deixe que os clientes encontre sua loja online nos mais famosos mecanismos de buscas (Google, Yahoo, Bing e etc).
                         </span>
                         <ButtonMore onClick={toggleProduct}>SAIBA MAIS...</ButtonMore>
                     </Product>
@@ -195,6 +198,33 @@ export default function Homepage() {
                                 <FaBullhorn className="iconTitle"/>
                                 <span>STATIC</span>
                             </TitleModal>
+                            <ModalBody>
+                                <span>
+                                    Um site estático é aquele que não conta com ferramentas de gerenciamento para alterações,
+                                    consultas, reformulações significativas de conteúdo, sem alteração de código fonte ou um banco de dados;
+                                </span>
+                                <ul>
+                                    Um <b>site estático</b> é recomendado para quem busca:
+                                    <li style={{marginTop:'20px'}}>Divulgar sua marca;</li>
+                                    <li>Divulgar meios de contato;</li>
+                                    <li>Ser encontrado nos mecanismos de busca (Google, Yahoo, Bing e etc);</li>
+                                    <li>Publicar o seu trabalho.</li>
+                                </ul>
+
+                                <ul>
+                                    <span>
+                                        <FaDollarSign className="iconUl"/> Encargos para manter-se online:
+                                    </span>
+                                    <li style={{marginTop:'20px'}}>Domínio (suamarca.com.br); <i>(Aprox. R$40,00/ano)</i></li>
+                                    <li>Hospedagem; <i>(Grátis por tempo indeterminado)</i></li>
+                                    <li>Manutenção. <i>(Depende do responsável)</i></li>
+                                </ul>
+
+                                <ButtonSend style={{marginTop:'50px'}}>
+                                    <FaHeadset className="iconButton"/>
+                                    FALAR COM CONSULTOR
+                                </ButtonSend>
+                            </ModalBody>
                         </ModalContainer>
                     </Modal>
 

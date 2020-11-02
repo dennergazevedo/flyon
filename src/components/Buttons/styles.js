@@ -103,6 +103,11 @@ export const ButtonSend = styled(motion.button)`
     margin-top: 20px;
     align-self: center;
 
+    .iconButton{
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
     &:hover{
         transition: 0.3s all;
         background-color: #0084AD;
