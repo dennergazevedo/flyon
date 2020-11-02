@@ -143,6 +143,7 @@ export default function Homepage() {
     }
 
     async function handleMail(){
+        toast.info('Aguarde, processando...', { position: 'bottom-center' });
         if(validator.isEmail(email)){
             try{
                 await api.post('/contact',{
@@ -154,6 +155,13 @@ export default function Homepage() {
                     cidade,
                     mensagem,
                 });
+                setNome('');
+                setEmail('');
+                setProduct('');
+                setPhone('');
+                setSubject('');
+                setCidade('');
+                setMensagem('');
                 toast.success('Sucesso! Em breve nossa equipe entrará em contato.', { position: 'bottom-center' });
             }catch(err){
                 toast.error('Falha na tentativa de contato, verifique os dados e tente novamente!', { position: 'bottom-center' });
