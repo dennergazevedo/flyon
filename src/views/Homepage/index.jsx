@@ -120,6 +120,14 @@ export default function Homepage() {
         toggleSystem();
     }
 
+    function handleEntry(){
+        setProductModal(false);
+        setSalesModal(false);
+        setSystemModal(false);
+        setSubject('Eu quero entrar nos negócios online.');
+        window.location.href='/#contact';
+    }
+
     return (
         <Container>
             <Navbar />
@@ -142,7 +150,8 @@ export default function Homepage() {
                     </Citacao>
                     <ButtonJoin
                         animate={{ opacity: 1 }}
-                        transition={{ ease: 'easeOut', duration: 0.8 }}>
+                        transition={{ ease: 'easeOut', duration: 0.8 }}
+                        onClick={handleEntry}>
                             ENTRAR NOS NEGÓCIOS
                     </ButtonJoin>
                 </Subtitle>
