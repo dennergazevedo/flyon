@@ -108,3 +108,22 @@ export const ButtonSend = styled(motion.button)`
         background-color: #0084AD;
     }
 `;
+
+export const ButtonCloseModal = styled(motion.button)`
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #121212;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: 0.5s all;
+    align-self: flex-end;
+
+    &:hover{
+        transition: 0.5s all;
+        background-color: #3331;
+    }
+`;

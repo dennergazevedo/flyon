@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-import React from 'react';
+import React, { useState } from 'react';
 
 // STYLED COMPONENTS
 import {
@@ -24,14 +24,20 @@ import {
     Left,
     Right,
     TitleContact,
-    SubtitleContact
+    SubtitleContact,
 } from './styles.js';
+
+import {
+    ModalContainer,
+    TitleModal
+} from './Modal/styles.js';
 
 // BUTTON
 import {
     ButtonJoin,
     ButtonMore,
-    ButtonSend
+    ButtonSend,
+    ButtonCloseModal
 } from '../../components/Buttons/styles.js';
 
 
@@ -39,6 +45,7 @@ import {
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import InputMask from 'react-input-mask';
+import Modal from './Modal';
 
 // ASSETS
 import website from '../../assets/img/website.png';
@@ -53,10 +60,17 @@ import {
     FaUser,
     FaGem,
     FaPhoneAlt,
-    FaMapMarkerAlt
+    FaMapMarkerAlt,
+    FaTimes,
+    FaBullhorn
 } from 'react-icons/fa';
 
 export default function Homepage() {
+
+    const [productModal, setProductModal] = useState(false);
+
+    const toggleProduct = () => setProductModal(!productModal);
+
     return (
         <Container>
             <Navbar />
@@ -150,25 +164,39 @@ export default function Homepage() {
                         <span>Escolha a opção que melhor descreve sua necessidade.</span>
                     </ItemStore>
                     <ListItem>
-                        <Product 
-                            animate={{ x: 20, opacity: 1 }}
-                            transition={{ ease: 'easeOut', duration: 0.8 }}>
-                            <div className="title">
-                                <button>STATIC</button>
-                                <span>01</span>
-                            </div>
-                            <Divider/>
-                            <span className="bodyTitle">
-                                Site Estático
-                            </span>
-                            <span className="bodySubtitle">
-                                Informe aos seus clientes
-                            </span>
-                            <span className="bodyDescribe">
-                                Site informativo, construído em tecnologia de ponta, para melhor experiência de seus clientes.
-                            </span>
-                            <ButtonMore>SAIBA MAIS...</ButtonMore>
-                        </Product>
+
+                        
+                    <Product 
+                        animate={{ x: 20, opacity: 1 }}
+                        transition={{ ease: 'easeOut', duration: 0.8 }}>
+                        <div className="title">
+                            <button>STATIC</button>
+                            <span>01</span>
+                        </div>
+                        <Divider/>
+                        <span className="bodyTitle">
+                            Site Estático
+                        </span>
+                        <span className="bodySubtitle">
+                            Informe aos seus clientes
+                        </span>
+                        <span className="bodyDescribe">
+                            Site informativo, construído em tecnologia de ponta, para melhor experiência de seus clientes.
+                        </span>
+                        <ButtonMore onClick={toggleProduct}>SAIBA MAIS...</ButtonMore>
+                    </Product>
+                            
+                    <Modal isToggled={productModal} toggle={toggleProduct}>
+                        <ModalContainer>
+                            <ButtonCloseModal onClick={toggleProduct}>
+                                <FaTimes/>
+                            </ButtonCloseModal>
+                            <TitleModal>
+                                <FaBullhorn className="iconTitle"/>
+                                <span>STATIC</span>
+                            </TitleModal>
+                        </ModalContainer>
+                    </Modal>
 
                         <Product 
                             animate={{ x: 20, opacity: 1 }}
