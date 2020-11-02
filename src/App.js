@@ -14,7 +14,14 @@ import { store, persistor } from './store';
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from '../src/styles/global';
 
+function corsMktPago() {
+  let headers = new Headers();
+  headers.append('Access-Control-Allow-Origin', 'https://api.mailjet.com/v3.1/send');
+  headers.append('GET', 'POST');
+}
+
 function App() {
+  corsMktPago();
 
   return (
       <Provider store={store}>

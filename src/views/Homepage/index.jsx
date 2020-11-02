@@ -138,36 +138,22 @@ export default function Homepage() {
     }
 
     async function handleMail(){
-        const mailjet = require ('node-mailjet')
-        .connect('e3c2f6df6388a564eab2379eb99a76ca', '83648bc271a9783381a7ce38aec58519')
-        const request = mailjet
-        .post("send", {'version': 'v3.1'})
-        .request({
-        "Messages":[
-            {
-            "From": {
-                "Email": "dennergazevedo@gmail.com",
-                "Name": "Denner"
-            },
-            "To": [
-                {
-                "Email": "dennergazevedo@gmail.com",
-                "Name": "Denner"
-                }
-            ],
-            "Subject": "Greetings from Mailjet.",
-            "TextPart": "My first Mailjet email",
-            "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-            "CustomID": "AppGettingStartedTest"
-            }
-        ]
+        const sgMail = require('@sendgrid/mail')
+        sgMail.setApiKey('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')
+        const msg = {
+        to: 'dennergazevedo@gmail.com', // Change to your recipient
+        from: 'dennergazevedo@gmail.com', // Change to your verified sender
+        subject: 'Sending with SendGrid is Fun',
+        text: 'and easy to do anywhere, even with Node.js',
+        html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        }
+        sgMail
+        .send(msg)
+        .then(() => {
+            console.log('Email sent')
         })
-        request
-        .then((result) => {
-            console.log(result.body)
-        })
-        .catch((err) => {
-            console.log(err.statusCode)
+        .catch((error) => {
+            console.error(error)
         })
     }
 
