@@ -137,6 +137,40 @@ export default function Homepage() {
         window.location.href='/#contact';
     }
 
+    async function handleMail(){
+        const mailjet = require ('node-mailjet')
+        .connect('e3c2f6df6388a564eab2379eb99a76ca', '83648bc271a9783381a7ce38aec58519')
+        const request = mailjet
+        .post("send", {'version': 'v3.1'})
+        .request({
+        "Messages":[
+            {
+            "From": {
+                "Email": "dennergazevedo@gmail.com",
+                "Name": "Denner"
+            },
+            "To": [
+                {
+                "Email": "dennergazevedo@gmail.com",
+                "Name": "Denner"
+                }
+            ],
+            "Subject": "Greetings from Mailjet.",
+            "TextPart": "My first Mailjet email",
+            "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+            "CustomID": "AppGettingStartedTest"
+            }
+        ]
+        })
+        request
+        .then((result) => {
+            console.log(result.body)
+        })
+        .catch((err) => {
+            console.log(err.statusCode)
+        })
+    }
+
     return (
         <Container>
             <Navbar />
@@ -478,7 +512,7 @@ export default function Homepage() {
                         </div>
 
                         <textarea placeholder="Escreva uma mensagem..." value={mensagem} onChange={e => setMensagem(e.target.value)}/>
-                        <ButtonSend>ENVIAR</ButtonSend>
+                        <ButtonSend onClick={handleMail}>ENVIAR</ButtonSend>
                     </Right>
                 </Contact>
             </Body>
